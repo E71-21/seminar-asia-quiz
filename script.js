@@ -46,12 +46,18 @@ function showQuestion() {
   feedbackEl.textContent = "";
   nextBtn.style.display = "none";
   answerEl.value = "";
+  answerEl.disabled = false;
+  submitBtn.disabled = false;
   questionEl.textContent = `What is the capital of ${countries[current]}?`;
 }
 
 function checkAnswer() {
   const userAnswer = answerEl.value.trim().toLowerCase();
   const correctAnswer = quizData[countries[current]].toLowerCase();
+
+  // Disable further editing / submissions
+  answerEl.disabled = true;
+  submitBtn.disabled = true;
 
   if (userAnswer === correctAnswer) {
     feedbackEl.textContent = "✅ Correct!";
@@ -75,6 +81,7 @@ function nextQuestion() {
     feedbackEl.textContent = `Final Score: ${score}/${countries.length}`;
     submitBtn.style.display = "none";
     nextBtn.style.display = "none";
+    answerEl.style.display = "none";
   }
 }
 
