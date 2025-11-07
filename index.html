@@ -6,16 +6,33 @@
   <title>Central & Southwest Asia Capitals Quiz</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="center">
   <h1>🌍 Central & Southwest Asia Capitals Quiz 🌍</h1>
-  <div id="quiz-container">
-    <p id="question"></p>
-    <input type="text" id="answer" placeholder="Type the capital..." />
+  
+  <!-- Mode Switcher -->
+  <div id="modeSelector">
+    <button id="quizModeBtn">Quiz Mode</button>
+    <button id="flashModeBtn">Flashcard Mode</button>
+  </div>
+
+  <!-- Quiz Section -->
+  <div id="quizSection">
+    <h2 id="question"></h2>
+    <input type="text" id="answer" placeholder="Type your answer">
     <button id="submit">Submit</button>
     <p id="feedback"></p>
-    <p id="score"></p>
+    <p id="score">Score: 0/0</p>
+    <button id="next" style="display: none;">Next Question</button>
   </div>
-  <button id="next" style="display:none;">Next Question</button>
-  <script src="script.js?v=2"></script>
+
+  <!-- Flashcard Section -->
+  <div id="flashSection" style="display: none;">
+    <div id="flashcard" class="card">
+      <div id="flashText">Click or press SPACE to flip</div>
+    </div>
+    <button id="nextFlash">Next Card</button>
+  </div>
+
+  <script src="script.js?v=3"></script>
 </body>
 </html>
