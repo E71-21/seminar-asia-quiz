@@ -128,9 +128,20 @@ function nextFlashcard() {
 // Flip on click or SPACE
 flashcard.addEventListener('click', flipFlashcard);
 document.addEventListener('keydown', e => {
+  // Flip flashcard if in flashcard mode
   if (e.code === 'Space' && flashSection.style.display !== 'none') {
     e.preventDefault();
     flipFlashcard();
+  }
+
+  // Enter key behavior for quiz mode
+  if (e.code === 'Enter' && quizSection.style.display !== 'none') {
+    e.preventDefault();
+    if (!answered) {
+      checkAnswer(); // Submit answer
+    } else {
+      nextQuestion(); // Move to next question
+    }
   }
 });
 nextFlash.addEventListener('click', nextFlashcard);
