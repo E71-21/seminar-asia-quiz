@@ -37,6 +37,7 @@ let score = 0;
 
 const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
+answerEl.addEventListener('paste', e => e.preventDefault());
 const submitBtn = document.getElementById('submit');
 const feedbackEl = document.getElementById('feedback');
 const scoreEl = document.getElementById('score');
